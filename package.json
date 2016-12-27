@@ -1,5 +1,5 @@
 {
-  "name": "discord.js-modularis",
+  "name": "discord-modularis",
   "version": "1.0.0",
   "description": "Modular framework for designing discord bots with discord.js",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atf1999/Discord.js-Modularis.git"
+    "url": "git+https://github.com/atf1999/modularis.git"
   },
   "keywords": [
     "Discord",
@@ -19,9 +19,9 @@
   "author": "Tom Orth (atf1999)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atf1999/Discord.js-Modularis/issues"
+    "url": "https://github.com/atf1999/modularis/issues"
   },
-  "homepage": "https://github.com/atf1999/Discord.js-Modularis#readme",
+  "homepage": "https://github.com/atf1999/modularis#readme",
   "dependencies": {
     "discord.js": "github:hydrabolt/discord.js#indev"
   }
