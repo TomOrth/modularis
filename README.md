@@ -2,7 +2,7 @@
 Command framework for discord.js
 
 Installation:
-```js npm install discord.js-modularis```
+``` npm install discord.js-modularis```
 ##Features
 * Minimal main JavaScript file
 * Fast command loading
