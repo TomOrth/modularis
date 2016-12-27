@@ -1,5 +1,5 @@
-var Modularis = require('../index');
-var path = require('path');
+const Modularis = require('../index');
+const path = require('path');
 var bot = new Modularis.Client({
     prefix: '!',
     token: '<token>',

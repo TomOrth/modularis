@@ -1,4 +1,4 @@
-var Modularis = require('../../../index');
+const Modularis = require('../../../index');
 
 class AddCommand extends Modularis.Command{
 	constructor(client){
@@ -9,7 +9,8 @@ class AddCommand extends Modularis.Command{
 			params: [
 					  {
 					  	name: 'numbers',
-						  type: 'array'
+						type: 'array',
+						desc: 'Group of numbers you want, seperated by ' + client.d
 					  }
 			]
 		});

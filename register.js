@@ -39,7 +39,7 @@ class CommandRegister {
      * @return {CommandRegister}
      */
     registerGroups() {
-        var cmdGroups = fs.readdirSync(this.commandPath);
+        let cmdGroups = fs.readdirSync(this.commandPath);
         cmdGroups.forEach(e => this.groups.set(e, path.join(this.commandPath, e)));
         return this;
     }
@@ -51,7 +51,6 @@ class CommandRegister {
     registerCommands() {
         this.groups.forEach(e => fs.readdirSync(e).forEach(c => {
             let Command = new require(path.join(e, '/', c.slice(0, -3)));
-            console.log(Command);
             let cmd = new Command(this.client);
             this.commands.set(cmd.name, cmd);
         }));

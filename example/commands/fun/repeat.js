@@ -1,4 +1,4 @@
-var Modularis = require('../../../index');
+const Modularis = require('../../../index');
 
 class RepeatCommand extends Modularis.Command{
 	constructor(client){
@@ -9,7 +9,8 @@ class RepeatCommand extends Modularis.Command{
 			params: [
 					  {
 					  	name: 'input',
-						  type: 'String'
+						type: 'String',
+						desc: 'The phrase you want the bot to say back'
 					  }
 			]
 		});
