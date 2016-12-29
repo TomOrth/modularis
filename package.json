@@ -1,6 +1,6 @@
 {
   "name": "discord-modularis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modular framework for designing discord bots with discord.js",
   "main": "index.js",
   "scripts": {
