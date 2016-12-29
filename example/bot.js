@@ -5,6 +5,7 @@ var bot = new Modularis.Client({
     token: '<token>',
     commandPath: path.join(__dirname, '/commands/'),
     delimiter: ','
+	selfbot: false
 });
 
 bot.on('ready', () => console.log(bot.user.username + " is online"));

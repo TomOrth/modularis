@@ -10,7 +10,7 @@ npm install discord-modularis
 * Minimal main JavaScript file
 * Fast command loading
 * Custom command names
-
+* Built-in selfbot support
 See ```example``` directory for a bot example
 
 Doc site to come.  For now, documentation is in the form of doc strings

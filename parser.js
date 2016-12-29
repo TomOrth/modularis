@@ -15,14 +15,14 @@ class CommandParser {
 		         * @readonly
 		         */
 		        Object.defineProperty(this, 'client', {value: client});
-        }
+    }
     /**
       *Handles parsed messages
       *@param {Message} m - Message being parsed
       *@param {String} d - delimiter used to seperate multiple command parameters
       */
     handleCommand(m, d) {
-        if(m.author.bot) return;
+        if((!this.client.selfbot && m.author.bot) || (this.client.selfbot && m.author.id != this.client.user.id)) return;
         let cmdName = m.content.indexOf(' ') != -1 ? m.content.substring(m.content.indexOf(this.client.prefix) + 1, m.content.indexOf(' ')) : m.content.substring(m.content.indexOf(this.client.prefix) + 1);
         let content = m.content.indexOf(d) != -1 ? m.content.substring(m.content.indexOf(' ') + 1).split(d) : [m.content.substring(m.content.indexOf(' ') + 1)];
         let cmd = this.client.register.commands.find('name', cmdName);
