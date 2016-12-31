@@ -1,6 +1,6 @@
 {
   "name": "discord-modularis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Modular framework for designing discord bots with discord.js",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/atf1999/modularis#readme",
   "dependencies": {
-    "discord.js": "github:hydrabolt/discord.js#indev"
+    "discord.js": "github:hydrabolt/discord.js#stable"
   }
 }
