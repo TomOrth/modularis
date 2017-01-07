@@ -6,7 +6,7 @@ var bot = new Modularis.Client({
     commandPath: path.join(__dirname, '/commands/'),
     eventsPath: path.join(__dirname, '/events/'),
     delimiter: ',',
-	selfbot: false
+    selfbot: false
 });
 
 bot.register
