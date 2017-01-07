@@ -1,7 +1,4 @@
 'use strict';
-
-const Discord = require('discord.js');
-
 class Command{
 	/**
 	 * @typedef {Object} CommandOptions

@@ -40,5 +40,16 @@ class CommandParser {
             cmd.run(m, params);
         }
     }
+    /**
+     * Handles triggered events
+     */
+    handleEvents(){
+        this.client.register.events.forEach(e => {
+            this.client.on(e.event, arg => {
+                if(arg) e.run(arg);
+                else e.run();
+            })
+        })
+    }
 }
 module.exports = CommandParser;

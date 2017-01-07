@@ -11,6 +11,7 @@ class Client extends Discord.Client {
      * @property {String} token - bot's token
      * @property {String} delimiter - the delimiter that seperates command parameters
      * @property {String} commandPath - path to commands
+     * @property {String} eventsPath - path to triggered events
 	 * @property {Boolean} selfbot - Whether or not the bot is a selfbot
      *
      * @param {ClientProps} options - Client properties
@@ -25,11 +26,13 @@ class Client extends Discord.Client {
         this.token = options.token;
         this.delimiter = options.delimiter;
         this.commandPath = options.commandPath;
+        this.eventsPath = options.eventsPath || '';
         this.selfbot = options.selfbot || false;
-		this.register = new CommandRegister(this, this.commandPath);
+		this.register = new CommandRegister(this, this.commandPath, this.eventsPath);
         this.parser = new CommandParser(this);
 
         this.on('message', m => this.parser.handleCommand(m, ','));
+        
 
     }
 

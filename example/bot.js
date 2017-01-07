@@ -4,12 +4,13 @@ var bot = new Modularis.Client({
     prefix: '!',
     token: '<token>',
     commandPath: path.join(__dirname, '/commands/'),
-    delimiter: ','
+    eventsPath: path.join(__dirname, '/events/'),
+    delimiter: ',',
 	selfbot: false
 });
 
-bot.on('ready', () => console.log(bot.user.username + " is online"));
 bot.register
-    .registerGroups()
-    .registerCommands();
+   .registerGroups()
+   .registerCommands()
+   .registerEvents();
 bot.activate();

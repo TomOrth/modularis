@@ -6,7 +6,7 @@ const path = require('path');
 class CommandRegister {
 
     /**@param {ModularisClient} client - Bot Client */
-    constructor(client, commandPath) {
+    constructor(client, commandPath, eventsPath) {
         /**
          * The client to register for
          * @name CommandRegister#client
@@ -27,11 +27,23 @@ class CommandRegister {
          */
         this.groups = new Discord.Collection();
 
+        /**
+         * Registered events
+         * @type {Collection<String,Event>}
+         */
+        this.events = new Discord.Collection();
+
         /*
          * Path to commands
          * @type {String}
          */
         this.commandPath = commandPath;
+
+        /**
+         * Path to events
+         * @type {Command}
+         */
+        this.eventsPath = eventsPath || '';
     }
 
     /**
@@ -50,11 +62,27 @@ class CommandRegister {
      */
     registerCommands() {
         this.groups.forEach(e => fs.readdirSync(e).forEach(c => {
-            let Command = new require(path.join(e, '/', c.slice(0, -3)));
+            let Command = require(path.join(e, '/', c.slice(0, -3)));
             let cmd = new Command(this.client);
             this.commands.set(cmd.name, cmd);
         }));
         return this;
+    }
+    /**
+     * Registers all events
+     * @return {CommandRegister}
+     */
+    registerEvents(){
+        if(this.eventsPath){
+            let eventsGroup = fs.readdirSync(this.eventsPath);
+            eventsGroup.forEach(e => {
+                let Event = require(path.join(this.eventsPath, e))
+                let evnt = new Event(this.client);
+                this.events.set(evnt.event, evnt);
+            });
+            this.client.parser.handleEvents();
+        }
+
     }
 }
 
