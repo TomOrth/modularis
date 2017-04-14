@@ -38,6 +38,7 @@ class CommandParser {
                 });
             }
             cmd.run(m, params);
+            if(this.client.selfbot) m.delete();
         }
     }
     /**
