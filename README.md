@@ -6,7 +6,7 @@ Installation:
 npm install discord-modularis
 ```
 
-##Features
+## Features
 * Minimal main JavaScript file
 * Fast command loading
 * Custom command names
