@@ -5,7 +5,7 @@ class ChannelCreateEvent extends Modularis.Event{
         super(client, 'channelCreate');
     }
     run(channel){
-        console.log(`${channel.id} was just created`);
+        console.log(`${channel.id} was just created just now`);
     }
 }
 module.exports = ChannelCreateEvent;
