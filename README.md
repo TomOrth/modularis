@@ -16,3 +16,6 @@ npm install discord-modularis
 See ```example``` directory for a bot example
 
 Doc site to come.  For now, documentation is in the form of doc strings
+
+## Licensing
+This software is available under the MIT License.
